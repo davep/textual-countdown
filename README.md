@@ -1,5 +1,7 @@
 # textual-countdown
 
+![Textual Countdown demo](images/textual-countdown.gif)
+
 ## Introduction
 
 This library provides a simple visual countdown widget, designed to subtly
