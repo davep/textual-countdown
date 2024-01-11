@@ -1,6 +1,6 @@
 # textual-countdown
 
-![Textual Countdown demo](images/textual-countdown.gif)
+![Textual Countdown demo](https://raw.githubusercontent.com/davep/textual-countdown/main/images/textual-countdown.gif)
 
 ## Introduction
 
