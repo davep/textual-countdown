@@ -33,9 +33,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://textual-countdown.davep.dev/"
+Homepage = "https://github.com/davep/textual-countdown"
 Repository = "https://github.com/davep/textual-countdown"
-Documentation = "https://textual-countdown.davep.dev/"
+Documentation = "https://github.com/davep/textual-countdown"
 Source = "https://github.com/davep/textual-countdown"
 Issues = "https://github.com/davep/textual-countdown/issues"
 Discussions = "https://github.com/davep/textual-countdown/discussions"
