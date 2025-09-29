@@ -1,5 +1,67 @@
-[build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
+[project]
+name = "textual-countdown"
+version = "0.1.1"
+description = "A visual countdown widget for Textual applications"
+authors = [
+    { name = "Dave Pearson", email = "davep@davep.org" }
+]
+dependencies = [
+    "textual>=1.0.0",
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = [
+    "terminal",
+    "library",
+    "widget",
+]
+classifiers = [
+    "Environment :: Console",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Terminals",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+]
 
-### pyproject.toml ends here
+[project.urls]
+Homepage = "https://textual-countdown.davep.dev/"
+Repository = "https://github.com/davep/textual-countdown"
+Documentation = "https://textual-countdown.davep.dev/"
+Source = "https://github.com/davep/textual-countdown"
+Issues = "https://github.com/davep/textual-countdown/issues"
+Discussions = "https://github.com/davep/textual-countdown/discussions"
+
+[build-system]
+requires = ["uv_build>=0.8.11,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+managed = true
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.1",
+    "mypy>=1.14.1",
+    "codespell>=2.4.1",
+    "ruff>=0.12.9",
+]
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+
+[tool.pyright]
+venvPath="."
+venv=".venv"
+exclude=[".venv"]

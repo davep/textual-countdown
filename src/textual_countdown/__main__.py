@@ -5,7 +5,7 @@
 from textual import on
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal
-from textual.widgets import Button, Header, Footer
+from textual.widgets import Button, Footer, Header
 
 ##############################################################################
 # Library imports.
