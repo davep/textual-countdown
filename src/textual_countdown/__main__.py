@@ -5,7 +5,7 @@
 from textual import on
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal
-from textual.widgets import Button, Header, Footer
+from textual.widgets import Button, Footer, Header
 
 ##############################################################################
 # Library imports.
@@ -29,10 +29,6 @@ class DemoApp(App[None]):
 
     TITLE = "textual-countdown"
     SUB_TITLE = "Demo"
-
-    BINDINGS = [
-        ("d", "toggle_dark", "Light/Dark"),
-    ]
 
     def compose(self) -> ComposeResult:
         """Compose the application."""
