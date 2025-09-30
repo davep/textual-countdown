@@ -121,6 +121,7 @@ class Countdown(Widget):
         If stopped with this method no `Countdown.Finished` message will be
         sent.
         """
+        self.post_message(self.Cancelled(self))
         self._stop()
         self.refresh()
 
