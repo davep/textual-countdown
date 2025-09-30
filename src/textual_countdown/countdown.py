@@ -44,14 +44,14 @@ class Countdown(Widget):
 
     @dataclass
     class CountdownMessage(Message):
-        """Base class for the `Countdown` message classes."""
+        """Base class for the [`Countdown`][textual_countdown.Countdown] message classes."""
 
         countdown: Countdown
-        """The `Countdown` widget that sent the message."""
+        """The [`Countdown`][textual_countdown.Countdown] widget that sent the message."""
 
         @property
         def control(self) -> Countdown:
-            """An alias for `countdown`."""
+            """An alias for [`countdown`][textual_countdown.Countdown.CountdownMessage.countdown]."""
             return self.countdown
 
     class Cancelled(CountdownMessage):
@@ -77,13 +77,13 @@ class Countdown(Widget):
         classes: str | None = None,
         disabled: bool = False,
     ) -> None:
-        """Initialise the `Countdown` widget.
+        """Initialise the [`Countdown`][textual_countdown.Countdown] widget.
 
         Args:
-            name: The name of the widget description.
-            id: The ID of the widget description in the DOM.
-            classes: The CSS classes of the widget description.
-            disabled: Whether the widget description is disabled or not.
+            name: The name of the countdown widget.
+            id: The ID of the countdown widget in the DOM.
+            classes: The CSS classes of the countdown widget.
+            disabled: Whether the countdown widget is disabled or not.
         """
         super().__init__(name=name, id=id, classes=classes, disabled=disabled)
         self._timer = self.set_interval(0.2, self._tick, pause=True)
@@ -101,7 +101,12 @@ class Countdown(Widget):
         """Start a countdown.
 
         Args:
-            countdown: The amount of time to down countdown.
+            countdown: The amount of time to count down.
+
+        Note:
+            When the countdown starts a
+            [`Started`][textual_countdown.Countdown.Started] message is
+            posted.
         """
         self._countdown = abs(countdown)
         self._started = monotonic()
@@ -118,8 +123,10 @@ class Countdown(Widget):
     def cancel(self) -> None:
         """Cancel the countdown timer from running.
 
-        If stopped with this method no `Countdown.Finished` message will be
-        sent.
+        Note:
+            When the countdown is cancelled a
+            [`Cancelled`][textual_countdown.Countdown.Cancelled] message is
+            posted.
         """
         self.post_message(self.Cancelled(self))
         self._stop()
