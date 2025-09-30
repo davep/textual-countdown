@@ -33,9 +33,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/davep/textual-countdown"
+Homepage = "https://textual-countdown.davep.dev"
 Repository = "https://github.com/davep/textual-countdown"
-Documentation = "https://github.com/davep/textual-countdown"
+Documentation = "https://textual-countdown.davep.dev"
 Source = "https://github.com/davep/textual-countdown"
 Issues = "https://github.com/davep/textual-countdown/issues"
 Discussions = "https://github.com/davep/textual-countdown/discussions"
@@ -53,6 +53,8 @@ dev = [
     "mypy>=1.14.1",
     "codespell>=2.4.1",
     "ruff>=0.12.9",
+    "mkdocstrings[python]>=0.30.1",
+    "mkdocs-material>=9.6.20",
 ]
 
 [[tool.uv.index]]
