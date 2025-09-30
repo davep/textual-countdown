@@ -1,6 +1,6 @@
 [project]
 name = "textual-countdown"
-version = "0.1.1"
+version = "1.0.0"
 description = "A visual countdown widget for Textual applications"
 authors = [
     { name = "Dave Pearson", email = "davep@davep.org" }
