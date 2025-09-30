@@ -2,6 +2,14 @@
 
 ![Textual Countdown demo](https://raw.githubusercontent.com/davep/textual-countdown/main/docs/source/textual-countdown.gif)
 
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/davep/textual-countdown/style-and-lint.yaml)](https://github.com/davep/textual-countdown/actions)
+[![GitHub commits since latest release](https://img.shields.io/github/commits-since/davep/textual-countdown/latest)](https://github.com/davep/textual-countdown/commits/main/)
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/davep/textual-countdown)](https://github.com/davep/textual-countdown/issues)
+[![GitHub Release Date](https://img.shields.io/github/release-date/davep/textual-countdown)](https://github.com/davep/textual-countdown/releases)
+[![PyPI - License](https://img.shields.io/pypi/l/textual-countdown)](https://github.com/davep/textual-countdown/blob/main/LICENSE)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/textual-countdown)](https://github.com/davep/textual-countdown/blob/main/pyproject.toml)
+[![PyPI - Version](https://img.shields.io/pypi/v/textual-countdown)](https://pypi.org/project/textual-countdown/)
+
 ## Introduction
 
 This library provides a simple visual countdown widget, designed to subtly
@@ -28,60 +36,13 @@ Once installed, you can try a demo of the library with:
 $ python -m textual_countdown
 ```
 
-## Using the widget
+Please see [the main documentation for the
+library](https://textual-countdown.davep.dev/) for details on how to use it.
 
-To import the widget, do:
+## TODO
 
-```python
-from textual_countdown import Countdown
-```
-
-The `Countdown` widget can then be composed into your application like any
-other Textual widget.
-
-### Controlling the countdown
-
-The widget provides the following methods:
-
-- `start(countdown: float) -> None` -- call this to start a countdown,
-  giving the number of seconds to count down.
-- `cancel() -> None` -- to cancel a countdown.
-
-There is also a `is_running` property to check if the countdown is running.
-
-### Events
-
-The following events will be sent from the widget:
-
-- `Countdown.Started` -- posted when a countdown starts.
-- `Countdown.Finished` -- posted when a countdown finishes.
-- `Countdown.Cancelled` -- posted if a countdown is cancelled.
-
-All events have a `countdown` property that points to the widget that sent
-them; `Started` and `Finished` also have a `counting` property that gives
-the amount of time being counted.
-
-### Styling
-
-The non-counting colour for the countdown display is controlled by the
-standard Textual `colour` CSS style. The active time-remaining portion of
-the display is controlled by a `countdown--remaining` component class.
-
-As an example, if you wanted to colour the non-running/expired portion of a
-countdown as red, and the time remaining as green, you could do:
-
-```scss
-Countdown {
-    color: red;
-
-    &> .countdown--remaining {
-        color: green;
-    }
-}
-```
-
-Additionally, when a `Countdown` is running, it will have a
-`countdown--running` class applied; this allows styling of non-running and
-running countdown widgets.
+See [the TODO tag in
+issues](https://github.com/davep/textual-countdown/issues?q=is%3Aissue+is%3Aopen+label%3ATODO)
+to see what I'm planning.
 
 [//]: # (README.md ends here)
