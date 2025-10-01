@@ -78,7 +78,7 @@ async def test_finished_message() -> None:
 
 ##############################################################################
 async def test_cancelled_message() -> None:
-    """When countdown is stopped we should get a cancel message.."""
+    """When countdown is stopped we should get a cancel message."""
 
     async with CountdownApp().run_test() as pilot:
         pilot.app.query_one(Countdown).start(10)
