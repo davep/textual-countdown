@@ -8,6 +8,9 @@ python   := $(run) python
 ruff     := $(run) ruff
 lint     := $(ruff) check --select I
 fmt      := $(ruff) format
+reports  := .reports
+test     := $(run) pytest --verbose --cov=$(lib)
+coverage := $(test) --cov-report html:$(reports)
 mypy     := $(run) mypy
 mkdocs   := $(run) mkdocs
 spell    := $(run) codespell
@@ -59,12 +62,21 @@ typecheck:			# Perform static type checks with mypy
 stricttypecheck:	        # Perform a strict static type checks with mypy
 	$(mypy) --scripts-are-modules --strict $(src)
 
+.PHONY: test
+test:				# Run the unit tests
+	$(test)
+
+.PHONY: coverage
+coverage:			# Produce a test coverage report
+	$(coverage)
+	open $(reports)/index.html
+
 .PHONY: spellcheck
 spellcheck:			# Spell check the code
 	$(spell) *.md $(src) $(docs)
 
 .PHONY: checkall
-checkall: spellcheck codestyle lint stricttypecheck # Check all the things
+checkall: spellcheck codestyle lint stricttypecheck test # Check all the things
 
 ##############################################################################
 # Documentation.
