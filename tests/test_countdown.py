@@ -90,4 +90,17 @@ async def test_cancelled_message() -> None:
         assert isinstance(pilot.app.captured_messages[-1], Countdown.Cancelled)
 
 
+##############################################################################
+async def test_control_property() -> None:
+    """The control property of the messages should be the countdown object."""
+
+    async with CountdownApp().run_test() as pilot:
+        pilot.app.query_one(Countdown).start(1)
+        await pilot.pause(1.1)
+        assert isinstance(pilot.app, CountdownApp)
+        for message in pilot.app.captured_messages:
+            assert isinstance(message, Countdown.CountdownMessage)
+            assert message.countdown == message.control
+
+
 ### test_countdown.py ends here
