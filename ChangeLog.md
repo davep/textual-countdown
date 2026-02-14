@@ -1,5 +1,12 @@
 # ChangeLog
 
+## Unreleased
+
+**Released: WiP**
+
+- Dropped support for Python 3.9.
+  ([#11](https://github.com/davep/textual-countdown/pull/11))
+
 ## v1.0.0
 
 **Released: 2025-09-30**
